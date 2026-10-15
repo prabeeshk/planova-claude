@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #F7F8FA;
+    --foreground: #131722;
+    --surface: #FFFFFF;
+    --surface-elevated: #F0F2F6;
+    --surface-border: #E2E5EB;
+    --muted: #687182;
+    --muted-bg: #EAECEF;
+
+    --primary: #6558E8;
+    --primary-hover: #5345D6;
+    --primary-foreground: #FFFFFF;
+    --primary-soft: #EEECFC;
+
+    --success: #059669;
+    --success-soft: #ECFDF5;
+    --success-foreground: #064E3B;
+
+    --warning: #D97706;
+    --warning-soft: #FFFBEB;
+    --warning-foreground: #78350F;
+
+    --critical: #DC2626;
+    --critical-soft: #FEF2F2;
+    --critical-foreground: #7F1D1D;
+
+    --info: #2563EB;
+    --info-soft: #EFF6FF;
+    --info-foreground: #1E3A8A;
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+  }
+
+  .dark {
+    --background: #101218;
+    --foreground: #F3F5FA;
+    --surface: #181C25;
+    --surface-elevated: #222833;
+    --surface-border: #2C3443;
+    --muted: #A8B1C0;
+    --muted-bg: #1F2531;
+
+    --primary: #7C70F2;
+    --primary-hover: #8F84F8;
+    --primary-foreground: #FFFFFF;
+    --primary-soft: #27234D;
+
+    --success: #10B981;
+    --success-soft: #064E3B;
+    --success-foreground: #A7F3D0;
+
+    --warning: #F59E0B;
+    --warning-soft: #78350F;
+    --warning-foreground: #FDE68A;
+
+    --critical: #EF4444;
+    --critical-soft: #7F1D1D;
+    --critical-foreground: #FECACA;
+
+    --info: #3B82F6;
+    --info-soft: #1E3A8A;
+    --info-foreground: #BFDBFE;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-border);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
